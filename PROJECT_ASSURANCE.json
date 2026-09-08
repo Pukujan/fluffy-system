@@ -1,0 +1,181 @@
+{
+  "schema_version": "pam-manifest/0.1.0",
+  "project": {
+    "name": "fluffy-system",
+    "repository": "Pukujan/fluffy-system",
+    "phase": "creative-bakeoff"
+  },
+  "methodology": {
+    "repository": "Pukujan/project-assurance-modules",
+    "revision": "a10ad56b7088c1e101e80914a9e00357dbef9120"
+  },
+  "project_facts": {
+    "software": true,
+    "projectization": true,
+    "agent_assisted": true,
+    "multi_session": true,
+    "multi_repository": true,
+    "empirical_quality_claims": false,
+    "human_final_creative_authority": true
+  },
+  "profiles": [],
+  "modules": [
+    {
+      "module_id": "projectization.scope-boundary",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The experiment needs a narrow current horizon so creative exploration does not turn into a new website-builder platform or silently promote candidates before owner review.",
+      "requirements": [
+        {
+          "requirement_id": "SCOPE_001",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/PDD.md", "note": "Defines the current product outcome, goals, subjects, and success criteria."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_002",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/PDD.md", "note": "Defines explicit non-goals including no universal scoring, no automatic promotion, and no new general-purpose site generator."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_003",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Records reuse/composition dispositions for existing OSS systems instead of silently expanding scope into replacement tooling."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_004",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/INVARIANTS.md", "note": "Defines human-review and candidate-promotion boundaries that gate scope expansion."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_005",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/ARCHITECTURE.md", "note": "Separates Fluffy System research/process authority from Design Bakery rendering/hosting and external OSS adapters."}
+          ],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "planning.foundation",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The experiment spans multiple subjects and repositories and needs explicit product, architecture, invariant, and failure boundaries before candidate production expands.",
+      "requirements": [
+        {
+          "requirement_id": "PLAN_FOUNDATION_001",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/PDD.md", "note": "Defines outcome, users, goals, non-goals, assumptions, and current success criteria."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PLAN_FOUNDATION_002",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/ARCHITECTURE.md", "note": "Defines responsibilities and boundaries among Fluffy System, product sources, external research, OSS adapters, and Design Bakery."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PLAN_FOUNDATION_003",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/INVARIANTS.md", "note": "Freezes evidence, human-authority, non-promotion, design-diversity, and Three.js fallback invariants."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PLAN_FOUNDATION_004",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "docs/FAILURE_REGISTER.md", "note": "Tracks material creative, evidence, scope, renderer, and publication failure modes with mitigations."}
+          ],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "projectization.build-vs-reuse",
+      "version": "0.2.0",
+      "disposition": "required",
+      "rationale": "A major purpose of this experiment is to avoid building a new marketing-site platform when existing design, brand, editing, and rendering systems can be reused or composed.",
+      "requirements": [
+        {
+          "requirement_id": "REUSE_001",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "artifact", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Defines the capability, constraints, and non-goals before comparing implementations."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_002",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "artifact", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Records internal Design Bakery discovery and external OSS discovery with concrete receipts."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_003",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "artifact", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Names serious candidates including OpenDesign, website-builder, Casa, BrandSpec, Onlook, Three.js, and the existing Design Bakery surface."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_004",
+          "state": "not_applicable",
+          "evidence": [],
+          "rationale": "The current capability does not require a bespoke dataset, model, corpus, benchmark, question bank, or content-asset class; product and market sources are research inputs rather than a dataset being built for reuse."
+        },
+        {
+          "requirement_id": "REUSE_005",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "artifact", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Records fitness, maintenance, licensing, security, extensibility, integration-cost, and performance tradeoffs for serious candidates."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_006",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "artifact", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Records native HTML and Three.js probes plus proportionality rationales for not executing heavier OSS tools in the first gallery."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_007",
+          "state": "not_applicable",
+          "evidence": [],
+          "rationale": "The reviewed disposition is compose/reuse rather than build_new. Fluffy System does not authorize a new general-purpose renderer or visual editor."
+        },
+        {
+          "requirement_id": "REUSE_008",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "artifact", "locator": "docs/REUSE_ASSESSMENT.json", "note": "Records the reviewed compose disposition, selected candidates, residual uncertainty, and reconsideration triggers."},
+            {"kind": "human_review", "locator": "owner-review:2026-09-08-fluffy-system", "note": "The owner explicitly chose the compose-and-bakeoff direction, requested native HTML plus OSS-informed alternatives and Three.js candidates, and retained final creative authority."}
+          ],
+          "rationale": null
+        }
+      ]
+    }
+  ]
+}
