@@ -19,3 +19,5 @@ The raw object key must be content-addressed and must not contain a person’s n
 An upload is not considered complete when a local file exists or when a GitHub receipt exists. The receipt must say `uploaded` only after a successful S3-compatible write and read-back verification. The uploader must use Fluffy-scoped variables (`FLUFFY_S3_ENDPOINT`, `FLUFFY_S3_BUCKET`, `FLUFFY_S3_ACCESS_KEY_ID`, and `FLUFFY_S3_SECRET_ACCESS_KEY`) and fail closed when any are absent. Cortex telemetry credentials are intentionally not valid substitutes.
 
 The first capture receipt is [the Check Fossil Core shared conversation](../evidence/transcripts/6aa0562f-49c4-83e9-be78-b9b6419d5b1d.json). Its raw artifacts remain outside this public repository until a scoped object-store upload is verified.
+
+After configuring the four required `FLUFFY_S3_*` variables, run `node tools/upload_transcript_s3.mjs <private-capture-directory>`. The command refuses missing scope, checks the two local hashes against the capture manifest, writes content-addressed objects, reads each object back, and emits `s3-receipt.json` only after both hashes match.
