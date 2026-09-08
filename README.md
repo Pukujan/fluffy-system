@@ -10,12 +10,16 @@ It is intentionally **not** a new website builder. Existing open-source design a
 
 ## Current experiment
 
-Two public projects are the first comparative subjects:
+Two projects are the first comparative subjects:
 
-- **Project Assurance Modules (PAM)** — how to make the research-to-project transition less dependent on a human or agent remembering every planning, validation, continuity, reuse, and evidence obligation.
-- **Research Assurance** — how to establish which exact research stack revision was tested together, what each assurance layer actually established, and what remains unproven.
+- **Project Assurance Modules (PAM)** — public; how to make the research-to-project transition less dependent on a human or agent remembering every planning, validation, continuity, reuse, and evidence obligation.
+- **Research Assurance** — private source project; how to establish which exact research stack revision was tested together, what each assurance layer actually established, and what remains unproven. Public candidate pages expose only public-safe product framing and external market research.
 
-For each subject we will produce multiple materially different creative candidates, including at least one Three.js/WebGL direction, publish them in a non-homepage Design Bakery gallery, and let the human owner judge what works.
+The first bakeoff now includes four materially different candidates for each subject, including one Three.js/WebGL direction per subject. They are published in an unlisted Design Bakery gallery for human review:
+
+- `https://www.design-bakery.com/experiments/fluffy-system/`
+
+Nothing in the gallery is a featured-project decision.
 
 ## Success condition
 
@@ -30,7 +34,7 @@ The experiment succeeds when:
 5. provenance is available without turning the marketing page into an audit report;
 6. Three.js variants degrade safely when WebGL or the module CDN is unavailable;
 7. all candidates are browsable from one hidden gallery on Design Bakery;
-8. the human owner can choose, reject, or request iteration without any automated system pretending to know their taste better than they do.
+8. the human owner can choose, reject, combine, or request iteration without any automated system pretending to know their taste better than they do.
 
 ## PAM
 
@@ -43,5 +47,5 @@ See:
 - `specs/INVARIANTS.md`
 - `docs/FAILURE_REGISTER.md`
 - `docs/EXPERIMENT_PROTOCOL.md`
-- `docs/REUSE_ASSESSMENT.md`
+- `docs/REUSE_ASSESSMENT.json`
 - `AGENTS.md`
