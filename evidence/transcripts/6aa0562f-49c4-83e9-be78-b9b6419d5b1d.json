@@ -1,0 +1,51 @@
+{
+  "schema": "fluffy.chatgpt-share-capture.v1",
+  "status": "captured_and_verified_in_private_s3",
+  "source": {
+    "type": "chatgpt_public_share",
+    "url": "https://chatgpt.com/share/6aa0562f-49c4-83e9-be78-b9b6419d5b1d",
+    "conversation_id": "6aa0562f-49c4-83e9-be78-b9b6419d5b1d",
+    "title": "Check Fossil Core",
+    "evidence_status": "reconstructed"
+  },
+  "capture_verification": {
+    "mapping_node_count": 2170,
+    "chain_node_count": 2170,
+    "message_count": 2169,
+    "role_counts": {
+      "system": 94,
+      "user": 38,
+      "assistant": 789,
+      "tool": 1248
+    },
+    "redacted_tool_message_count": 1635,
+    "current_node": "11dc0422-a693-461a-b7bc-87a9e98f2ade",
+    "raw_html_sha256": "ba4e3b7c596941f06f4072e1c1b61c1d99d6ee2fab0e95a35c328b64bea7afd5",
+    "normalized_json_sha256": "7ecd7150ed64812e8b7c1299170926376115250d0045d7991a03ea59a4494e5e",
+    "transcript_markdown_sha256": "19290f414c0590c4fdd95b4e10bfd327422aadff7d22f778ee1234431ce16ec4"
+  },
+  "durable_storage": {
+    "backend": "private_s3_compatible",
+    "endpoint_host": "ea7c350a04679c4e3354157427736297.r2.cloudflarestorage.com",
+    "bucket": "study-os-transcripts",
+    "prefix": "fluffy-system/raw-transcripts/chatgpt-share",
+    "upload_status": "uploaded",
+    "verification_status": "read_back_sha256_match",
+    "verified_at": "2026-09-08T19:03:17.135Z",
+    "raw_html_object_key": "fluffy-system/raw-transcripts/chatgpt-share/6aa0562f-49c4-83e9-be78-b9b6419d5b1d/ba4e3b7c596941f06f4072e1c1b61c1d99d6ee2fab0e95a35c328b64bea7afd5.html",
+    "normalized_json_object_key": "fluffy-system/raw-transcripts/chatgpt-share/6aa0562f-49c4-83e9-be78-b9b6419d5b1d/7ecd7150ed64812e8b7c1299170926376115250d0045d7991a03ea59a4494e5e.json",
+    "raw_html_bytes": 5327164,
+    "normalized_json_bytes": 5964732
+  },
+  "public_repository_policy": {
+    "raw_capture_committed": false,
+    "raw_capture_reason": "This repository is public; the exact transcript is stored in private object storage.",
+    "receipt_committed": true,
+    "derived_material_promotion": "human_review_required"
+  },
+  "notes": [
+    "The serialized public-share mapping was one complete parent chain ending at current_node; no missing node was inferred.",
+    "Redacted tool outputs remain explicit redactions in the structured and Markdown projections.",
+    "The R2 write and read-back verification succeeded for both content-addressed objects."
+  ]
+}

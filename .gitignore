@@ -1,0 +1,4 @@
+# Exact shared-page captures and private transcript projections stay outside
+# this public repository. Commit only a reviewed receipt under evidence/.
+share-*.html
+private-transcripts/
