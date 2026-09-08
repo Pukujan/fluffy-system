@@ -1,0 +1,27 @@
+name: Verify transcript object storage
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out receipt and verifier
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Read back and hash-check R2 objects
+        env:
+          FLUFFY_S3_ENDPOINT: ${{ secrets.FLUFFY_S3_ENDPOINT }}
+          FLUFFY_S3_BUCKET: ${{ secrets.FLUFFY_S3_BUCKET }}
+          FLUFFY_S3_ACCESS_KEY_ID: ${{ secrets.FLUFFY_S3_ACCESS_KEY_ID }}
+          FLUFFY_S3_SECRET_ACCESS_KEY: ${{ secrets.FLUFFY_S3_SECRET_ACCESS_KEY }}
+          FLUFFY_S3_REGION: ${{ vars.FLUFFY_S3_REGION }}
+          FLUFFY_S3_PREFIX: ${{ vars.FLUFFY_S3_PREFIX }}
+        run: node tools/verify_transcript_s3.mjs evidence/transcripts/6aa0562f-49c4-83e9-be78-b9b6419d5b1d.json
