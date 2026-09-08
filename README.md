@@ -42,6 +42,7 @@ This project adopts a bounded subset of `Pukujan/project-assurance-modules` meth
 
 See:
 
+- `PROJECT_ASSURANCE.json` — pinned bounded PAM adoption for scope, planning foundation, and build-vs-reuse
 - `specs/PDD.md`
 - `specs/ARCHITECTURE.md`
 - `specs/INVARIANTS.md`
