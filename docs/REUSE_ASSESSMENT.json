@@ -1,0 +1,364 @@
+{
+  "schema_version": "pam-reuse-assessment/0.1.0",
+  "assessment_status": "reviewed",
+  "project": {
+    "repository": "Pukujan/fluffy-system"
+  },
+  "capability": {
+    "id": "market-story-creative-production",
+    "description": "Research, frame, generate, compare, and review high-quality product marketing case studies and presentations without building a new general-purpose website generator.",
+    "constraints": [
+      "Human owner remains final authority on taste and promotion.",
+      "Native HTML/CSS/JS remains a fast control renderer.",
+      "Product claims must remain grounded in primary sources.",
+      "External research may support market pain but cannot become product efficacy proof.",
+      "Candidate designs must remain materially different rather than collapse into one template.",
+      "At least one Three.js/WebGL direction should be available when spatial interaction helps explain the product."
+    ],
+    "non_goals": [
+      "Build a hosted no-code website builder.",
+      "Replace mature visual editors or design-system tools.",
+      "Create an automated aesthetic winner score.",
+      "Require one framework or renderer for every marketing artifact."
+    ]
+  },
+  "search_plan": {
+    "required_scopes": ["internal", "external"],
+    "required_asset_classes": []
+  },
+  "searches": [
+    {
+      "search_id": "internal-design-bakery-search",
+      "scope": "internal",
+      "surface": "Owner repository inventory and existing Design Bakery case studies",
+      "query": "existing marketing case study HTML presentation evidence workflows and reusable deployment surface",
+      "target_classes": ["internal_system"],
+      "outcome": "candidates_found",
+      "receipts": [
+        {
+          "receipt_id": "design-bakery-repository",
+          "kind": "repository",
+          "locator": "https://github.com/Pukujan/design-bakery",
+          "note": "Existing production host and native HTML case-study surface already used successfully for FOSSIL and Study OS."
+        }
+      ],
+      "rationale": null
+    },
+    {
+      "search_id": "external-design-tool-search",
+      "scope": "external",
+      "surface": "GitHub and public web research",
+      "query": "open source AI design workflow case study generator brand as code visual editor website builder Three.js",
+      "target_classes": ["framework", "application", "library"],
+      "outcome": "candidates_found",
+      "receipts": [
+        {
+          "receipt_id": "open-design-repository",
+          "kind": "repository",
+          "locator": "https://github.com/nexu-io/open-design",
+          "note": "Agent-native design skills and DESIGN.md workflow."
+        },
+        {
+          "receipt_id": "website-builder-repository",
+          "kind": "repository",
+          "locator": "https://github.com/karero/website-builder",
+          "note": "Agent skill suite covering insights, positioning, content, design, QA, and launch."
+        },
+        {
+          "receipt_id": "casa-repository",
+          "kind": "repository",
+          "locator": "https://github.com/IngeniousArtist/casa",
+          "note": "Open-source brand case-study generator with model-directed art direction."
+        },
+        {
+          "receipt_id": "brandspec-repository",
+          "kind": "repository",
+          "locator": "https://github.com/brandspec/brandspec",
+          "note": "Brand identity as code with reusable token outputs."
+        },
+        {
+          "receipt_id": "onlook-repository",
+          "kind": "repository",
+          "locator": "https://github.com/onlook-dev/onlook",
+          "note": "Open-source visual editing workflow for code-backed sites."
+        },
+        {
+          "receipt_id": "threejs-repository",
+          "kind": "repository",
+          "locator": "https://github.com/mrdoob/three.js",
+          "note": "Mature WebGL/3D rendering library for immersive candidate variants."
+        }
+      ],
+      "rationale": null
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "design-bakery-native-html",
+      "name": "Design Bakery native HTML/CSS/JS workflow",
+      "class": "internal_system",
+      "origin": "internal",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "Pukujan/design-bakery",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "reuse",
+      "evidence_receipts": ["design-bakery-repository"],
+      "tradeoffs": {
+        "fitness": "Strong fit for rapidly generated expressive static case studies, presentations, and gallery pages.",
+        "maintenance": "Already owned and deployed by the project owner.",
+        "license": "Internal ownership; no new external license dependency for authored page code.",
+        "security": "Static public artifact surface with no new privileged runtime required for the experiment.",
+        "extensibility": "Can host plain HTML, CSS, JS, SVG, canvas, and external module-enhanced variants.",
+        "integration_cost": "Low because routing and deployment already exist.",
+        "performance": "Static pages are lightweight by default and can be tuned per candidate.",
+        "material_reasons": [
+          "Recent Study OS and FOSSIL work demonstrates strong output quality with this path.",
+          "It provides the comparison control against which OSS-assisted approaches should be judged."
+        ]
+      }
+    },
+    {
+      "candidate_id": "open-design",
+      "name": "OpenDesign workflow",
+      "class": "framework",
+      "origin": "external",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "nexu-io/open-design",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "compose",
+      "evidence_receipts": ["open-design-repository"],
+      "tradeoffs": {
+        "fitness": "Strong fit for design briefs, visual-direction discipline, frontend craft, and anti-generic-AI design guidance.",
+        "maintenance": "Active public project at research time; exact release should be rechecked before installation.",
+        "license": "Upstream licenses vary by bundled skill; verify before copying code or assets.",
+        "security": "Use as a local/reference workflow; no need to make it a production runtime dependency.",
+        "extensibility": "Skill-oriented structure can inform or be invoked by compatible agent environments.",
+        "integration_cost": "Low to moderate depending on whether it is installed or only used as a workflow reference.",
+        "performance": "Not on the deployed page runtime when used only for design guidance.",
+        "material_reasons": [
+          "Its frontend-design workflow explicitly starts from audience, job, domain, and emotional tone.",
+          "It is useful upstream of HTML generation rather than replacing Design Bakery deployment."
+        ]
+      }
+    },
+    {
+      "candidate_id": "website-builder",
+      "name": "karero website-builder skill suite",
+      "class": "framework",
+      "origin": "external",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "karero/website-builder",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "compose",
+      "evidence_receipts": ["website-builder-repository"],
+      "tradeoffs": {
+        "fitness": "Strong end-to-end agent workflow precedent from insights and positioning through design, QA, and launch.",
+        "maintenance": "Active public project at research time.",
+        "license": "Verify repository and third-party license files before code reuse.",
+        "security": "No production dependency is required if used as a process/reference adapter.",
+        "extensibility": "Plain skill files make the workflow portable across several coding agents.",
+        "integration_cost": "Low as a process reference; higher if adopting its Astro/Cloudflare production stack, which is not required here.",
+        "performance": "Not relevant to deployed candidates unless its generated stack is adopted.",
+        "material_reasons": [
+          "Validates the repo-of-skills orchestration approach.",
+          "Its fixed production stack is unnecessary for Design Bakery, so reuse should focus on process rather than hosting."
+        ]
+      }
+    },
+    {
+      "candidate_id": "casa",
+      "name": "Casa case-study art direction",
+      "class": "application",
+      "origin": "external",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "IngeniousArtist/casa",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "compose",
+      "evidence_receipts": ["casa-repository"],
+      "tradeoffs": {
+        "fitness": "Strong reference for committing to a specific case-study aesthetic and planning a sequence of visual frames.",
+        "maintenance": "Public project; exact current state should be checked before execution.",
+        "license": "Verify upstream license before reusing implementation or templates.",
+        "security": "Keep out of the deployed runtime unless intentionally adopted.",
+        "extensibility": "Useful specifically in the downstream art-direction phase after positioning exists.",
+        "integration_cost": "Moderate if executed, low if used only as a comparative art-direction reference.",
+        "performance": "Not relevant to static candidate runtime when used as a planning adapter.",
+        "material_reasons": [
+          "It preserves model art-direction freedom rather than reducing the output to one rigid page template.",
+          "It starts later than Fluffy System's market/audience research, so it is complementary rather than full coverage."
+        ]
+      }
+    },
+    {
+      "candidate_id": "brandspec",
+      "name": "BrandSpec brand-as-code",
+      "class": "framework",
+      "origin": "external",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "brandspec/brandspec",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "compose",
+      "evidence_receipts": ["brandspec-repository"],
+      "tradeoffs": {
+        "fitness": "Useful after a brand direction is chosen and needs a durable token/voice contract.",
+        "maintenance": "Newer public project; maturity should be rechecked before depending on its schema.",
+        "license": "Verify upstream license before implementation reuse.",
+        "security": "Brand contract tooling need not be part of the deployed site runtime.",
+        "extensibility": "Can export brand definitions to several implementation formats.",
+        "integration_cost": "Low for an optional export/adaptation layer.",
+        "performance": "No runtime cost when used only at build/design time.",
+        "material_reasons": [
+          "Useful for preserving an approved brand after human selection.",
+          "Not a substitute for the market research and creative-direction decision itself."
+        ]
+      }
+    },
+    {
+      "candidate_id": "onlook",
+      "name": "Onlook visual editing workflow",
+      "class": "application",
+      "origin": "external",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "onlook-dev/onlook",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "compose",
+      "evidence_receipts": ["onlook-repository"],
+      "tradeoffs": {
+        "fitness": "Potentially useful for visual iteration after a code-backed candidate exists.",
+        "maintenance": "Popular public project; exact current capabilities should be checked before use.",
+        "license": "Verify upstream licensing before local deployment or code reuse.",
+        "security": "Treat as an optional editor, not a required production dependency.",
+        "extensibility": "Useful downstream for visual code edits rather than upstream positioning research.",
+        "integration_cost": "Moderate because the current Design Bakery control path is already direct and fast.",
+        "performance": "No deployed runtime cost if used only as an editor.",
+        "material_reasons": [
+          "Could improve iterative visual tuning after owner feedback.",
+          "Does not replace native generation or upstream research."
+        ]
+      }
+    },
+    {
+      "candidate_id": "threejs",
+      "name": "Three.js immersive renderer",
+      "class": "library",
+      "origin": "external",
+      "coverage": "partial",
+      "identity": {
+        "kind": "repository",
+        "locator": "mrdoob/three.js",
+        "version": null
+      },
+      "serious": true,
+      "disposition": "compose",
+      "evidence_receipts": ["threejs-repository"],
+      "tradeoffs": {
+        "fitness": "Strong fit for experimental candidates where spatial structure, transformation, or simulation communicates the product mechanism.",
+        "maintenance": "Mature and actively maintained ecosystem.",
+        "license": "MIT upstream at research time; pin and recheck the exact version used in a deployed candidate.",
+        "security": "Client-side rendering library; external CDN imports should fail soft and may later be vendored if selected.",
+        "extensibility": "Broad 3D/WebGL ecosystem with optional React integrations.",
+        "integration_cost": "Low for isolated static-page experiments, higher for production-grade interactive applications.",
+        "performance": "Requires explicit mobile, reduced-motion, and fallback discipline.",
+        "material_reasons": [
+          "Provides the requested immersive aesthetic comparison.",
+          "Should remain an optional renderer rather than force the whole marketing system into a JS app architecture."
+        ]
+      }
+    }
+  ],
+  "probes": [
+    {
+      "candidate_id": "design-bakery-native-html",
+      "status": "run",
+      "evidence": ["https://www.design-bakery.com/case-studies/study-os", "https://www.design-bakery.com/case-studies/fossil"],
+      "rationale": null
+    },
+    {
+      "candidate_id": "open-design",
+      "status": "not_run",
+      "evidence": [],
+      "rationale": "Initial experiment can reuse documented workflow ideas without installing another runtime; execution can be added if the gallery indicates a meaningful value hypothesis."
+    },
+    {
+      "candidate_id": "website-builder",
+      "status": "not_run",
+      "evidence": [],
+      "rationale": "Its Astro/Cloudflare production stack is unnecessary for the current Design Bakery deployment; process comparison is sufficient for the first gallery."
+    },
+    {
+      "candidate_id": "casa",
+      "status": "not_run",
+      "evidence": [],
+      "rationale": "Use its art-direction pattern as a comparison reference first; execute later only if a Casa-specific output is valuable."
+    },
+    {
+      "candidate_id": "brandspec",
+      "status": "not_run",
+      "evidence": [],
+      "rationale": "BrandSpec becomes more useful after a winning brand direction exists."
+    },
+    {
+      "candidate_id": "onlook",
+      "status": "not_run",
+      "evidence": [],
+      "rationale": "Onlook is primarily an iteration surface; use it after owner feedback if direct edits become slower than visual editing."
+    },
+    {
+      "candidate_id": "threejs",
+      "status": "run",
+      "evidence": ["Design Bakery hidden gallery Three.js candidates"],
+      "rationale": null
+    }
+  ],
+  "decision": {
+    "disposition": "compose",
+    "selected_candidate_ids": [
+      "design-bakery-native-html",
+      "open-design",
+      "website-builder",
+      "casa",
+      "brandspec",
+      "onlook",
+      "threejs"
+    ],
+    "build_new_unmet_requirements": [],
+    "rationale": "Do not build a new general-purpose marketing renderer. Preserve the research/storytelling process in Fluffy System, reuse Design Bakery for output, use mature OSS selectively for design/art-direction/brand/editing patterns, and use Three.js only as an optional immersive renderer.",
+    "residual_uncertainty": [
+      "The first gallery may show that one external design workflow produces a repeatable quality improvement worth deeper integration.",
+      "Some tools may be more useful after human selection than during first-pass generation."
+    ],
+    "reconsideration_triggers": [
+      "Native HTML generation becomes a repeated bottleneck rather than a strength.",
+      "An OSS tool consistently produces substantially better owner-rated outputs across multiple subjects.",
+      "Maintaining brand consistency across many selected projects becomes more expensive than adopting a brand-as-code contract."
+    ],
+    "human_review": {
+      "status": "approved",
+      "evidence": "Owner instruction on 2026-09-08: prefer reuse over building unnecessary systems; owner will judge final rendered candidates."
+    }
+  }
+}
