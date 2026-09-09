@@ -1,52 +1,94 @@
-# Fluffy System
+# Fluffy
 
-Fluffy System is a repo-guided experiment for turning real product evidence into market-ready case studies, presentations, and product pages without forcing every project through the same template or visual system.
+**Give an AI your product repo. Get a marketing story a buyer might actually care about.**
 
-The project exists to preserve the part of recent Design Bakery work that has consistently improved quality:
+Coding agents can already produce a polished landing page in minutes. The harder part is deciding what deserves to be on that page: who the buyer is, what they are struggling with, what they use today, where the market is leaving them short, which proof matters, and what visual world makes the product feel distinct.
 
-`product truth -> human moment -> market pain -> external research -> positioning -> narrative -> visual direction -> rendered candidates -> human selection`
+Fluffy gives the agent that upstream job.
 
-It is intentionally **not** a new website builder. Existing open-source design and site-generation systems are candidates to reuse, adapt, or learn from. Native HTML/CSS/JS remains the control because it is fast, expressive, and already produces strong results in Design Bakery.
+You point it at the product source and the place you want the marketing to live. It researches the product, the audience, the market, real customer language, competitors, quantitative evidence, and brand references. Then it writes and renders several genuinely different marketing directions for you to judge.
 
-## Current experiment
+The final taste call stays with you.
 
-Two projects are the first comparative subjects:
+## Why this exists
 
-- **Project Assurance Modules (PAM)** — public; how to make the research-to-project transition less dependent on a human or agent remembering every planning, validation, continuity, reuse, and evidence obligation.
-- **Research Assurance** — private source project; how to establish which exact research stack revision was tested together, what each assurance layer actually established, and what remains unproven. Public candidate pages expose only public-safe product framing and external market research.
+AI has made content production cheap. Ahrefs surveyed 879 marketers in 2025 and found 87% were already using AI to help create content, with AI users publishing 42% more per month. That speed does not solve the quality problem. Research has found measurable stylistic differences between LLM and human writing, including lexical patterns and readability differences, while controlled marketing experiments have found that perceived AI authorship can reduce authenticity, positive word of mouth, and loyalty for emotional brand communications.
 
-The first bakeoff now includes four materially different candidates for each subject, including one Three.js/WebGL direction per subject. They are published in an unlisted Design Bakery gallery for human review:
+Sources:
+- https://ahrefs.com/blog/marketers-using-ai-publish-more-content/
+- https://doi.org/10.1111/ijal.70115
+- https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2025.1616935/full
+- https://doi.org/10.1016/j.jbusres.2024.114984
 
-- `https://www.design-bakery.com/experiments/fluffy-system/`
+Fluffy treats research, positioning, copy, and art direction as one creative job. The agent has to understand the buyer before it gets to decorate the page.
 
-Nothing in the gallery is a featured-project decision.
+## What you give it
 
-## Success condition
+```text
+Product repo: Pukujan/my-product
+Target repo: Pukujan/design-bakery
+Audience: founders / developers / students / buyers / investors
+Deliverables: case study + presentation + evidence page
+```
 
-Success is not an automated aesthetic score.
+If the audience is unclear, Fluffy researches plausible segments and picks the strongest working hypothesis for the candidate set.
 
-The experiment succeeds when:
+## What it does
 
-1. the product framing is grounded in its own primary sources and real incidents;
-2. market/audience research and external evidence materially shape the story;
-3. each candidate is a working responsive page rather than a moodboard;
-4. the candidates are genuinely different in narrative and visual direction;
-5. provenance is available without turning the marketing page into an audit report;
-6. Three.js variants degrade safely when WebGL or the module CDN is unavailable;
-7. all candidates are browsable from one hidden gallery on Design Bakery;
-8. the human owner can choose, reject, combine, or request iteration without any automated system pretending to know their taste better than they do.
+1. Reads the real product source, including docs, PRs, incidents, usage, and current limitations.
+2. Researches how the target audience describes the problem in the wild.
+3. Maps current alternatives, including the status quo and manual workarounds.
+4. Finds credible market data and external research that makes the pain concrete.
+5. Develops several positioning angles and writes a buyer-facing creative brief.
+6. Reviews at least 20 relevant brand and interaction references for a major page direction.
+7. Creates several visual directions that differ in layout, typography, metaphor, motion, and emotional tone.
+8. Writes the marketing copy from the buyer's point of view and runs a dedicated anti-AI-pattern rewrite.
+9. Produces working HTML candidates, with Three.js or other rendering approaches when they earn their place.
+10. Publishes the candidates to a review gallery. You keep, combine, revise, or delete them.
 
-## PAM
+## Claude Code
 
-This project adopts a bounded subset of `Pukujan/project-assurance-modules` methodology. PAM is guidance for projectization here, not a runtime dependency and not a creative authority.
+Claude Code automatically loads `CLAUDE.md`. This repository includes a project memory file that imports the Fluffy playbook and the human-copy rules.
 
-See:
+From this repo:
 
-- `PROJECT_ASSURANCE.json` — pinned bounded PAM adoption for scope, planning foundation, and build-vs-reuse
-- `specs/PDD.md`
-- `specs/ARCHITECTURE.md`
-- `specs/INVARIANTS.md`
-- `docs/FAILURE_REGISTER.md`
-- `docs/EXPERIMENT_PROTOCOL.md`
-- `docs/REUSE_ASSESSMENT.json`
-- `AGENTS.md`
+```text
+claude
+```
+
+Then:
+
+```text
+Use Fluffy on Pukujan/my-product.
+Research the market and audience first.
+Create 4 materially different product-marketing page candidates in Pukujan/design-bakery.
+Publish them to an unlisted gallery and finish the work without waiting for me to choose a direction mid-process.
+```
+
+## ChatGPT, Codex, Cursor, and other agents
+
+Start with `AGENTS.md`. The same workflow is written to be agent-agnostic.
+
+## The output standard
+
+A strong Fluffy run should leave you with pages that answer these questions quickly:
+
+- Is this for someone like me?
+- Does this describe a problem I actually recognize?
+- Why should I care now?
+- What am I doing instead today?
+- What makes this product worth switching for?
+- What evidence makes the claim believable?
+- Does this brand feel like this product specifically?
+
+The page should sound like somebody met the customer before they opened the code editor.
+
+## Current pilot
+
+The first pilot uses:
+- `Pukujan/project-assurance-modules`
+- `Pukujan/research-assurance`
+
+The first gallery exposed a real failure in this repo: the instructions were too easy for an agent to satisfy with polished, generic, system-centric copy. The v2 workflow treats that as a design defect and makes buyer language, market framing, copy examples, brand research, and structural variation explicit requirements.
+
+See `docs/V1_FAILURE_RETROSPECTIVE.md`.
