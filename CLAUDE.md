@@ -5,6 +5,7 @@
 @copy/HUMAN_MARKETING.md
 @research/MARKET_AND_AUDIENCE.md
 @research/BRAND_RESEARCH.md
+@design/VISUAL_MEDIA_STRATEGY.md
 @examples/COPY_TRANSFORMATIONS.md
 @docs/FOCUSED_GENERATION.md
 
@@ -22,12 +23,17 @@ Default to:
 
 1. research several positioning and brand territories cheaply;
 2. choose the strongest commercial thesis for the requested audience;
-3. generate one complete primary HTML page;
-4. review and improve it as if it were the only deliverable;
-5. optionally generate one separate experimental renderer page, such as Three.js, when the medium adds meaning;
-6. generate further full pages only after the previous candidate has received its own focused critique pass.
+3. choose a visual-media strategy after brand direction is clear;
+4. generate one complete primary HTML page;
+5. review and improve it as if it were the only deliverable;
+6. optionally generate one separate experimental renderer page, such as Three.js, when the medium adds meaning;
+7. generate further full pages only after the previous candidate has received its own focused critique pass.
 
 Follow `docs/FOCUSED_GENERATION.md` for candidate counts and independence rules.
+
+Follow `design/VISUAL_MEDIA_STRATEGY.md` before deciding whether the page should be type-led, screenshot-led, custom-vector-led, image-led, Three.js-led, or a restrained combination.
+
+When generated imagery is useful, give it a specific brand/story job, crop and compress it for the real layout, keep essential copy in HTML, and use SVG/HTML for precise explanatory interaction around it.
 
 When a writable target repo is provided, publish the finished candidate(s) to an unlisted review gallery.
 
