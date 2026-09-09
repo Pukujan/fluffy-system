@@ -10,12 +10,13 @@ The human owner judges taste, positioning, and which candidate survives. Your jo
 2. `copy/HUMAN_MARKETING.md`
 3. `research/MARKET_AND_AUDIENCE.md`
 4. `research/BRAND_RESEARCH.md`
-5. `examples/COPY_TRANSFORMATIONS.md`
-6. `docs/FOCUSED_GENERATION.md`
+5. `design/VISUAL_MEDIA_STRATEGY.md`
+6. `examples/COPY_TRANSFORMATIONS.md`
+7. `docs/FOCUSED_GENERATION.md`
 
 ## Finish the whole run
 
-When the user asks for a Fluffy run, complete the research, positioning, brand exploration, copy, HTML, QA, and gallery publication in one working session when tools allow it.
+When the user asks for a Fluffy run, complete the research, positioning, brand exploration, media direction, copy, HTML, QA, and gallery publication in one working session when tools allow it.
 
 Do not stop after a strategy memo and ask the owner to pick a direction unless they explicitly requested a workshop. The default review surface is rendered work.
 
@@ -101,6 +102,28 @@ Develop at least 3 brand territories as compact research artifacts. Each directi
 
 Do not render all three automatically. Select the territory that best serves the product story, then give it a full design pass.
 
+## Phase 4.5: choose the visual medium
+
+Run `design/VISUAL_MEDIA_STRATEGY.md` after the brand direction is selected.
+
+Decide what should carry the visual story:
+
+- typography/layout
+- product UI/screenshots
+- custom SVG/vector
+- generated imagery
+- photography
+- Three.js/WebGL
+- video/motion
+
+Choose one dominant medium and at most one or two supporting media for the primary page.
+
+Generated imagery is appropriate when the brand needs atmosphere, a character, a human scene, editorial art, or a visual world that code alone would not create well. Give the image a specific job, crop/compress it for the real layout, keep essential copy in HTML, and use vector/HTML for precise interaction around it.
+
+Custom SVG is preferred when the product has a mechanism, route, state model, instrument, or relationship that should become a repeatable brand asset.
+
+Three.js is appropriate when depth or spatial transformation adds understanding. It is not the default visual filler.
+
 ## Phase 5: write like someone who knows the customer
 
 Follow `copy/HUMAN_MARKETING.md`.
@@ -140,13 +163,13 @@ Follow `docs/FOCUSED_GENERATION.md`.
 
 The normal sequence is:
 
-1. freeze the selected audience, positioning, proof boundary, and creative thesis;
+1. freeze the selected audience, positioning, proof boundary, creative thesis, and media strategy;
 2. generate one complete page;
 3. critique the page as if it were the only deliverable;
-4. fix weak copy, typography, spacing, hierarchy, mobile layout, source treatment, and interactions;
+4. fix weak copy, typography, spacing, hierarchy, mobile layout, source treatment, imagery/vector treatment, and interactions;
 5. only after that page is strong may another full candidate begin.
 
-A later candidate must receive a fresh creative brief. It may inherit product truth and market research. It should not automatically inherit section order, hero syntax, components, palette, type, visual metaphor, or CTA wording.
+A later candidate must receive a fresh creative brief. It may inherit product truth and market research. It should not automatically inherit section order, hero syntax, components, palette, type, visual metaphor, media mix, or CTA wording.
 
 Do not satisfy a request for “choices” by generating several shallow pages in parallel.
 
