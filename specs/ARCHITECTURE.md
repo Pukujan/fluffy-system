@@ -1,107 +1,157 @@
 # Architecture
 
-Fluffy System has no long-running runtime service.
+Fluffy is a repo-guided marketing workflow for AI coding agents. It has no required runtime service.
 
-It is an orchestration and review boundary across existing systems.
+The durable part is the sequence of research and creative decisions that happens before page generation.
 
-## Components
+## Flow
 
 ```text
-product repositories
-        |
-        v
-primary-source discovery
-        |
-        +----> real incidents / PRs / usage / transcripts
-        |
-        v
-market + audience research
-        |
-        +----> external quantitative/research support
-        |
-        v
-positioning + narrative brief
-        |
-        v
-creative-direction set
-        |
-        +----> native HTML/CSS/JS control
-        +----> OSS-informed / adapter candidate
-        +----> Three.js/WebGL candidate
-        |
-        v
-Design Bakery hidden gallery
-        |
-        v
+product repo
+   |
+   v
+product truth
+   |
+   +--> real incidents / usage / PRs / proof
+   |
+   v
+buyer research
+   |
+   +--> audience language
+   +--> current workaround
+   +--> buying trigger
+   |
+   v
+market research
+   |
+   +--> direct alternatives
+   +--> status quo
+   +--> quantitative evidence
+   +--> why now
+   |
+   v
+positioning set
+   |
+   +--> customer angle
+   +--> investor angle when useful
+   +--> rejected weak angles
+   |
+   v
+brand research
+   |
+   +--> 20+ references for major work
+   +--> 3+ visual territories
+   |
+   v
+copy + creative brief
+   |
+   +--> buyer-language draft
+   +--> anti-AI-pattern rewrite
+   +--> claim/evidence check
+   |
+   v
+candidate renderers
+   |
+   +--> native HTML/CSS/JS
+   +--> alternate 2D direction
+   +--> Three.js/WebGL when useful
+   +--> OSS-assisted/editor workflows when they add value
+   |
+   v
+unlisted gallery
+   |
+   v
 human owner review
-        |
-        +----> reject
-        +----> iterate
-        +----> combine
-        +----> explicitly select
-                        |
-                        v
-               featured/public integration
+   |
+   +--> keep
+   +--> combine
+   +--> revise
+   +--> delete all
 ```
 
-## Ownership
+## Agent entry points
 
-### Fluffy System owns
+### Claude Code
 
-- experiment methodology;
-- research/positioning brief format;
-- creative comparison protocol;
-- invariants and failure register;
-- records of what tools/workflows were actually used;
-- review state.
+`CLAUDE.md` is the automatic project-memory entry point and imports the core playbook, research protocols, copy rules, and examples.
 
-### Design Bakery owns
+### ChatGPT / Codex / Cursor / other agents
 
-- deployed candidate HTML;
-- gallery routes;
-- final featured project integration after human selection;
-- production deployment conventions.
+`AGENTS.md` is the portable entry point.
 
-### Subject repositories own
+Both routes converge on the same workflow.
 
-- product truth;
-- product maturity/status;
-- usage evidence;
-- architecture and implementation claims;
-- public/private source boundaries.
+## Source ownership
 
-### External research sources own
+### Product repository
 
-- market statistics;
-- published findings;
-- third-party claims.
+Owns product truth, status, implementation, real usage, benchmark results, and public/private boundaries.
 
-External research can support the market problem. It cannot silently become product efficacy evidence.
+### Fluffy repository
+
+Owns the marketing workflow, research protocol, copy standard, creative-direction rules, examples, and failure lessons.
+
+### Target marketing repository
+
+Owns rendered pages, routes, production constraints, deployment, and any final featured integration.
+
+### External sources
+
+Own market statistics, community language, competitor claims, and published research.
+
+External sources can support the market problem. Product outcomes require product evidence.
+
+## Working artifacts
+
+A strong run may create temporary or durable working notes such as:
+
+```text
+product-truth.md
+buyer-language.md
+market-map.md
+positioning-options.md
+brand-reference-map.md
+creative-directions.md
+claim-map.md
+```
+
+The exact filenames are optional. The information is not.
+
+Do not force these working artifacts onto the public marketing page.
 
 ## Renderer boundary
 
-The story brief and creative direction are upstream of the rendering technology.
+Positioning and brand direction are upstream of rendering technology.
 
-A candidate may be plain HTML, CSS, SVG, canvas, Three.js, or another suitable renderer. Renderer choice does not change product truth or evidence scope.
+The same approved market story can be expressed as:
 
-## OSS adapter boundary
+- static HTML
+- editorial long-form
+- interactive product demo
+- Three.js experience
+- presentation
+- evidence page
+- homepage card
 
-Existing open-source projects are treated as reusable capabilities, reference workflows, or optional editors.
+Changing renderer should not silently change product truth.
 
-The first comparison set includes:
+## OSS boundary
 
-- OpenDesign: design brief / frontend craft / design-system workflow;
-- website-builder: agent skill orchestration from insights through launch;
-- Casa: model-directed case-study art direction;
-- BrandSpec: brand-as-code output contract;
-- Onlook: visual code iteration/editor workflow;
-- Three.js / React Three Fiber ecosystem: immersive renderer;
-- native HTML/CSS/JS: control path.
+Existing tools can be used where they are good:
 
-Fluffy System does not claim to run an adapter unless that tool was actually executed. A candidate may be described as `informed by` a workflow without claiming tool execution.
+- Framer / Figma / Replit / Claude Design for visual iteration or generation
+- OpenDesign for design workflow ideas
+- Casa for downstream case-study art direction
+- BrandSpec for durable brand tokens after a direction is selected
+- Onlook for code-backed visual editing
+- Three.js / Spline-style interaction patterns for 3D experiences
 
-## Review boundary
+Fluffy does not need to rebuild these capabilities.
 
-A candidate in the hidden gallery is experimental.
+The workflow should record whether an external tool actually produced or transformed an artifact. `Inspired by` and `generated by` are different claims.
 
-Gallery inclusion is not endorsement. Homepage/featured inclusion requires explicit human selection.
+## Human authority
+
+The owner decides whether the positioning feels true, whether the copy sounds human, whether the design has taste, and whether any candidate should become featured marketing.
+
+The gallery is the acceptance surface.
