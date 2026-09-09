@@ -1,83 +1,118 @@
 # Product Definition Document
 
-## Problem
+## Market problem
 
-High-quality product marketing for technical projects often fails in two opposite ways.
+AI can now generate polished pages, decks, copy, and visual directions extremely quickly.
 
-The first failure is generic AI marketing: polished abstractions, interchangeable SaaS language, weak audience empathy, and design that looks fashionable without revealing why the product matters.
+That has moved the bottleneck upstream.
 
-The second failure is evidence overcorrection: the page becomes a methodology report, feature inventory, provenance ledger, or audit surface before the visitor has any reason to care.
+A product owner still has to decide:
 
-Recent Design Bakery work improved when the process started from a real person and a real moment, then connected that moment to a broader market pain, external evidence, a defensible product insight, and a visual world that fit the audience.
+- which buyer actually matters;
+- what moment makes that buyer care;
+- what they use today;
+- where the current approach leaves pain unresolved;
+- which part of the product deserves the headline;
+- which claims are credible;
+- what evidence makes the story believable;
+- which visual language fits the market and audience;
+- how to keep the page from sounding like generic AI copy.
 
-The difficult part is not HTML generation. The difficult part is repeatedly doing the upstream research and judgment well enough that the HTML has something worth expressing.
+When those decisions are weak, page-generation tools can produce a beautifully executed version of the wrong story.
+
+Recent Design Bakery work on FOSSIL and Study OS improved only after repeated passes on user pain, market framing, audience language, real incidents, external research, and brand direction. The HTML came after those decisions.
+
+Fluffy packages that upstream creative-marketing process for coding agents.
 
 ## Product outcome
 
-Create a repeatable, repo-guided creative experiment that can take a technical product and produce several market-ready candidate stories and visual directions for human review.
-
-The system should preserve strong process discipline without constraining the final creative output to a template.
+A product owner can point an AI coding agent at a product repo and a target marketing repo, let it research and generate several complete market-facing directions, then review the rendered candidates instead of manually steering every intermediate step.
 
 ## Primary user
 
-The human product/project owner who can judge:
+Technical founders, project owners, researchers, and builders who:
 
-- whether the product has been understood;
-- whether the market pain is real and relevant;
-- whether the copy sounds human;
-- whether the evidence is fair;
-- whether the visual direction feels right;
-- whether a candidate deserves to become public/featured marketing.
+- already use AI coding agents;
+- can explain their product deeply;
+- do not want their marketing to read like architecture docs or generic generated SaaS copy;
+- want the agent to do real market and brand research before it writes;
+- prefer judging finished visual candidates over approving every small creative decision.
 
 ## Secondary users
 
-- an AI agent researching and generating candidates;
-- future collaborators who need to understand how a candidate was framed;
-- reviewers comparing creative directions.
+- product marketers using coding agents;
+- designers exploring multiple directions quickly;
+- portfolio owners turning technical repos into public case studies;
+- founders preparing customer, investor, or launch pages.
 
-## Current subjects
+## Job to be done
 
-1. `Pukujan/project-assurance-modules`
-2. `Pukujan/research-assurance`
+When I have a real product and need to explain it publicly, help me turn the product source into a market story and visual direction that a target buyer can understand and care about, then show me several finished options I can judge.
+
+## Current alternatives
+
+The user can currently:
+
+- ask ChatGPT, Claude, Codex, Cursor, or another coding agent to make a page directly;
+- generate/refine a site in Framer, Replit Design, Figma Sites, Claude Design, or similar tools;
+- hire a copywriter, product marketer, designer, or agency;
+- write the positioning and page manually;
+- reuse a template and adapt it.
+
+These alternatives cover important parts of the job. Fluffy concentrates on the repo-to-market research and creative-brief layer that tells the generator what buyer, problem, evidence, and brand territory should drive the page.
+
+## Market timing
+
+AI-assisted creative work is already mainstream.
+
+- Ahrefs surveyed 879 marketers in 2025 and reported 87% use AI to help create content; marketers using AI published 42% more content per month in the sample.
+- Gartner surveyed 418 marketing leaders and reported that 77% of organizations using GenAI had adopted it for creative-development tasks.
+- Figma reports that 72% of designers in its 2026 State of the Designer survey use generative AI in web-design workflows.
+
+More output makes differentiation, relevance, and trust more important.
+
+Research also provides a reason to care about the writing itself. Studies have found measurable linguistic differences between AI and human text, and controlled marketing experiments have found that perceived AI authorship can reduce authenticity and loyalty for emotional communications.
 
 ## Goals
 
-1. Ground positioning in product primary sources and real incidents.
-2. Research audience, market, competitors, substitutes, and adjacent brand references before final design.
-3. Use quantitative/external research to support market pain where suitable.
-4. Preserve human-sounding, audience-specific storytelling.
-5. Keep detailed provenance available without making it the emotional center of the marketing page.
-6. Generate multiple genuinely different visual candidates.
-7. Keep native HTML/CSS/JS as the fast baseline renderer.
-8. Include experimental Three.js candidates where 3D can embody the product story.
-9. Publish candidates in a hidden Design Bakery gallery for human selection.
-10. Reuse existing OSS tools or their workflows where they add value instead of building a replacement platform.
+1. Make the agent understand the product from primary sources before writing marketing.
+2. Research the buyer's real language, current alternatives, and market context.
+3. Use credible quantitative evidence to make the pain and timing concrete.
+4. Generate multiple defensible positioning angles.
+5. Research at least 20 meaningful brand references for major visual work.
+6. Produce candidate designs that differ structurally, emotionally, and visually.
+7. Apply a dedicated rewrite pass for AI-shaped rhetorical patterns and generic abstraction.
+8. Keep native HTML/CSS/JS as the fastest default renderer.
+9. Use Three.js when spatial or transformational interaction genuinely strengthens the story.
+10. Publish candidate pages to an unlisted gallery for human judgment.
+11. Preserve strong claim boundaries without turning the customer-facing page into a provenance report.
 
 ## Non-goals
 
-- automatically deciding which design is tasteful;
-- automatically promoting a candidate to the homepage;
-- building another general-purpose site generator;
-- replacing OpenDesign, Casa, Onlook, BrandSpec, Three.js, or other mature tools;
-- creating a universal scoring function for marketing quality;
-- proving that a product works because external research supports its problem domain;
-- requiring every candidate to share a component library or brand system;
-- forcing Three.js into products where it adds no explanatory value.
+- automated aesthetic scoring;
+- a universal website template;
+- automatic homepage promotion;
+- replacing existing design and website-generation tools;
+- proving product efficacy from external market research;
+- forcing the same brand system across unrelated products;
+- forcing 3D into every project;
+- removing the human owner's creative authority.
 
 ## Success criteria
 
-At the current experiment horizon:
+A successful Fluffy run produces finished pages where:
 
-- a hidden gallery is live in Design Bakery;
-- both subject projects have multiple working candidate pages;
-- each subject has at least one 3D/Three.js direction and at least two non-3D directions;
-- all candidates are usable on mobile and desktop;
-- each candidate exposes enough source/research links to verify strong claims;
-- no candidate is linked from the main Design Bakery homepage before owner approval;
-- the owner can review the gallery and give qualitative feedback candidate by candidate.
+- a target visitor understands the product, audience, and pain within seconds;
+- the copy contains buyer-specific situations and concrete product nouns;
+- the market gap is explicit and fair to existing alternatives;
+- important numbers have traceable sources;
+- major claims stay within evidence scope;
+- candidate designs are clearly different even when viewed as thumbnails;
+- the product itself appears in the story rather than hiding behind abstract brand graphics;
+- the owner can choose, combine, revise, or reject candidates after viewing the rendered gallery.
 
-## Human authority
+## Creative authority
 
-The human owner is the final authority on creative acceptance.
+The owner is the acceptance oracle for taste.
 
-Automated checks may reject broken HTML, inaccessible navigation, malformed evidence, invented claims, or missing fallback behavior. They may not declare a candidate aesthetically correct or market-winning.
+Automated checks can catch broken pages, weak contrast, repeated banned copy patterns, missing evidence, stale links, and inaccessible interactions. They cannot decide which visual direction feels right for the product or which market story the owner wants to stand behind.
