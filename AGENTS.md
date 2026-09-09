@@ -2,7 +2,7 @@
 
 Fluffy turns a real product repo into buyer-facing marketing directions and working pages.
 
-The human owner judges taste, positioning, and which candidate survives. Your job is to do enough research and creative work that the owner is choosing among strong options instead of repairing generic AI copy.
+The human owner judges taste, positioning, and which candidate survives. Your job is to do enough research and creative work that the owner is choosing among strong outputs instead of repairing generic AI copy.
 
 ## Read before starting
 
@@ -11,12 +11,15 @@ The human owner judges taste, positioning, and which candidate survives. Your jo
 3. `research/MARKET_AND_AUDIENCE.md`
 4. `research/BRAND_RESEARCH.md`
 5. `examples/COPY_TRANSFORMATIONS.md`
+6. `docs/FOCUSED_GENERATION.md`
 
 ## Finish the whole run
 
-When the user asks for a Fluffy run, complete the research, positioning, brand exploration, copy, HTML candidates, QA, and gallery publication in one working session when tools allow it.
+When the user asks for a Fluffy run, complete the research, positioning, brand exploration, copy, HTML, QA, and gallery publication in one working session when tools allow it.
 
-Do not stop after a strategy memo and ask the owner to pick a direction unless they explicitly requested a workshop. The default review surface is the rendered candidate gallery.
+Do not stop after a strategy memo and ask the owner to pick a direction unless they explicitly requested a workshop. The default review surface is rendered work.
+
+A completed run does **not** require several full pages for the same product. The default is one deeply finished primary page plus, when useful, one separate experimental renderer such as Three.js.
 
 ## Phase 1: understand the product
 
@@ -54,7 +57,7 @@ External research supports the market problem. It does not prove the product wor
 
 ## Phase 3: positioning before copy
 
-Create at least 3 positioning angles. Each must state:
+Create at least 3 positioning angles as compact strategy notes. Each must state:
 
 - audience
 - job or desired progress
@@ -66,7 +69,9 @@ Create at least 3 positioning angles. Each must state:
 - evidence that makes the angle believable
 - risk of overclaiming
 
-Choose the strongest angles for the candidate set. Different candidates may use different valid angles.
+These are cheap strategic options. Do not automatically build one page for every positioning angle.
+
+Choose the strongest commercial thesis for the requested audience before the main design pass.
 
 Avoid category claims that five competitors can already say unchanged.
 
@@ -84,7 +89,7 @@ Split the set across:
 
 Record what each reference teaches. Do not create a link dump.
 
-Develop at least 3 brand directions. Each direction must differ in:
+Develop at least 3 brand territories as compact research artifacts. Each direction must differ in:
 
 - emotional temperature
 - visual metaphor
@@ -94,7 +99,7 @@ Develop at least 3 brand directions. Each direction must differ in:
 - motion language
 - use of depth/3D
 
-Do not make three color variations of the same SaaS page.
+Do not render all three automatically. Select the territory that best serves the product story, then give it a full design pass.
 
 ## Phase 5: write like someone who knows the customer
 
@@ -127,29 +132,29 @@ Public copy must not use:
 
 Do not solve AI-sounding prose by adding slang, lower-case text, random fragments, or fake imperfections. Fix the underlying structure, specificity, point of view, and rhythm.
 
-## Phase 6: generate materially different pages
+## Phase 6: generate one focused page
 
 Native HTML/CSS/JS is the default because it is fast and gives the agent broad creative freedom.
 
-For a full bakeoff, produce 3 to 5 working candidates.
+Follow `docs/FOCUSED_GENERATION.md`.
 
-At least one candidate should explore 3D/Three.js when the product has a spatial, transformational, network, simulation, or object-based story that benefits from it.
+The normal sequence is:
 
-Variation must be structural. Across the candidate set change several of these:
+1. freeze the selected audience, positioning, proof boundary, and creative thesis;
+2. generate one complete page;
+3. critique the page as if it were the only deliverable;
+4. fix weak copy, typography, spacing, hierarchy, mobile layout, source treatment, and interactions;
+5. only after that page is strong may another full candidate begin.
 
-- story order
-- hero model
-- typography
-- density
-- navigation
-- color logic
-- product-demo treatment
-- illustration style
-- interaction model
-- motion
-- 2D vs 3D
+A later candidate must receive a fresh creative brief. It may inherit product truth and market research. It should not automatically inherit section order, hero syntax, components, palette, type, visual metaphor, or CTA wording.
 
-## Three.js quality bar
+Do not satisfy a request for “choices” by generating several shallow pages in parallel.
+
+## Optional experimental renderer
+
+At most one experimental renderer is included by default when it adds meaning.
+
+Three.js is appropriate when the product has a spatial, transformational, network, simulation, or object-based story that benefits from it.
 
 A Three.js page must keep semantic HTML for all essential information and CTAs. WebGL is progressive enhancement.
 
@@ -199,7 +204,9 @@ By the end of the page they should also understand:
 
 ## Phase 9: gallery review
 
-Publish experimental candidates to an unlisted/noindex gallery when the target repo supports it.
+Publish experimental candidate(s) to an unlisted/noindex gallery when the target repo supports it.
+
+A gallery can contain one focused page per product. It does not need to contain several design variants for every product.
 
 The gallery is a human taste surface. It may show direction notes, but do not bias the owner with an automated winner score.
 
